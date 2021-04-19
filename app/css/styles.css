@@ -7242,6 +7242,9 @@ h1 {
   color: #F7BE9F;
   text-align: center; }
 
+.carousel-container {
+  margin-top: 5em; }
+
 .centered {
   margin: 0 auto; }
 
