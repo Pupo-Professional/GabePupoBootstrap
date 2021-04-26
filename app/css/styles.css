@@ -5649,7 +5649,8 @@ button.bg-dark:focus {
   margin: 1rem !important; }
 
 .mt-3,
-.my-3 {
+.my-3,
+.cider-list {
   margin-top: 1rem !important; }
 
 .mr-3,
@@ -5657,7 +5658,8 @@ button.bg-dark:focus {
   margin-right: 1rem !important; }
 
 .mb-3,
-.my-3 {
+.my-3,
+.cider-list {
   margin-bottom: 1rem !important; }
 
 .ml-3,
@@ -7187,6 +7189,7 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6; } }
 
 /* SCSS Example #1*/
+/* for the use in calculation of bottom-padding of one element */
 /* Mixin Example */
 footer p {
   text-align: center;
@@ -7223,6 +7226,14 @@ h1 {
   font-size: 405%;
   opacity: 0.9; }
 
+/* For the jumbotron!*/
+.loaded-menu {
+  color: #CC2522; }
+
+.order-ahead {
+  color: #751600;
+  font-size: 175%; }
+
 .hotdog-header {
   margin-left: 10px;
   margin-top: 10px; }
@@ -7238,9 +7249,21 @@ h1 {
   font-size: 130%;
   color: #DAA520; }
 
-.my-3 {
+
+.my-3,
+.cider-list {
   color: #F7BE9F;
   text-align: center; }
+
+/* extend/inheritance this element selector
+inherits the color from the headings "my-3"*/
+.cider-list {
+  color: #F7BE9F;
+  list-style: none; }
+
+/* using interpolation to set the bottom-padding*/
+.carousel-item {
+  padding-bottom: calc(2em + 5em); }
 
 .carousel-container {
   margin-top: 5em; }
@@ -7265,9 +7288,6 @@ p {
 img {
   max-height: 100%;
   max-width: 100%; }
-
-#logo {
-  height: 275px; }
 
 .nav {
   font-size: 200%;
@@ -7303,6 +7323,8 @@ ul.nav.nav-tabs {
 a.nav-link.dropdown-toggle {
   color: yellow; }
 
+/* The multiplication operator is used in the padding to
+give it a total of 9em padding.*/
 .d-flex {
   padding: 9em;
   background-size: cover;

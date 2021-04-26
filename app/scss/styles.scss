@@ -12,6 +12,8 @@ $ww_purple-lightning: #c005f2;
 $ww_red_condiment: #751600;
 $ww_pink: #F7BE9F;
 $ww_winter_blue: #253960;
+/* for the use in calculation of bottom-padding of one element */
+$css-padding: 5em;
 
 /* Mixin Example */
 @mixin colorCenter ($color) {
@@ -60,6 +62,14 @@ h1 {
   font-size: 405%;
   opacity: 0.9;
 }
+/* For the jumbotron!*/
+.loaded-menu {
+  color: #CC2522;
+}
+.order-ahead {
+  color: #751600;
+  font-size: 175%;
+}
 .hotdog-header {
   margin-left: 10px;
   margin-top: 10px;
@@ -78,6 +88,18 @@ h1 {
 .my-3 {
   color:$ww_pink;
   text-align: center;
+}
+/* extend/inheritance this element selector
+inherits the color from the headings "my-3"*/
+.cider-list {
+  @extend.my-3;
+  color: $ww_pink;
+  list-style: none;
+}
+
+/* using interpolation to set the bottom-padding*/
+.carousel-item {
+  padding-bottom: calc(2em + #{$css-padding});
 }
 .carousel-container {
   margin-top: 5em;
@@ -103,9 +125,6 @@ p {
 img {
   max-height: 100%;
   max-width: 100%;
-}
-#logo {
-  height: 275px;
 }
 .nav {
   font-size: 200%;
@@ -141,8 +160,10 @@ ul.nav.nav-tabs {
 a.nav-link.dropdown-toggle {
   color: yellow;
 }
+/* The multiplication operator is used in the padding to
+give it a total of 9em padding.*/
 .d-flex {
-  padding: 9em;
+  padding: 3em * 3;
   background-size: cover;
   background-image: url("https://images.unsplash.com/photo-1496715976403-7e36dc43f17b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80");
   oolor: white;
